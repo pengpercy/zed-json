@@ -12,7 +12,7 @@ It also includes a small set of JSON snippets so the extension provides a Zed ma
 
 ## Zed support status
 
-Zed extensions currently do not expose the VS Code-style editor command API needed to replace the active selection or whole buffer directly. This extension therefore provides Zed Assistant slash commands plus a local CLI with the same transformation logic.
+Zed extensions currently do not expose the VS Code-style editor command API needed to replace the active selection or whole buffer directly. This extension therefore provides Zed Assistant slash commands with the same JSON transformation logic.
 
 Slash commands:
 
@@ -22,21 +22,7 @@ Slash commands:
 - `/json-escape <json>`
 - `/json-unescape <json>`
 
-CLI usage:
-
-```sh
-node bin/json-tools.js validate '{"a":1}'
-node bin/json-tools.js beautify '{"a":1}'
-node bin/json-tools.js uglify '{ "a": 1 }'
-node bin/json-tools.js escape '{"a":"b"}'
-node bin/json-tools.js unescape '{\"a\":\"b\"}'
-```
-
-If no text argument is supplied, the CLI reads from stdin:
-
-```sh
-node bin/json-tools.js beautify < package.json
-```
+The extension has no Node.js runtime dependency. The command implementation is Rust compiled to WebAssembly by Zed.
 
 ## Local installation
 
