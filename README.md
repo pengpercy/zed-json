@@ -18,15 +18,29 @@ Slash commands:
 
 - `/json-validate <json>`
 - `/json-beautify <json>`
+- `/json-beautify --indent 4 <json>`
+- `/json-beautify --tabs <json>`
 - `/json-uglify <json>`
 - `/json-escape <json>`
 - `/json-unescape <json>`
 
-The extension has no Node.js runtime dependency. The command implementation is Rust compiled to WebAssembly by Zed.
+The extension has no Node.js runtime dependency. The command implementation is Rust compiled to WebAssembly by Zed. Number parsing enables arbitrary precision so large JSON numbers are preserved instead of being rewritten through floating-point notation.
 
 ## Local installation
 
 In Zed, run `zed::InstallDevExtension` and select this directory.
+
+Zed requires Rust installed via `rustup` when installing a dev extension. Homebrew Rust does not provide the WebAssembly target setup Zed expects, and Zed will fail with `failed to compile Rust extension`. Install Rust with `rustup` first, then add the WebAssembly target:
+
+```sh
+rustup target add wasm32-wasip1
+```
+
+On macOS, if Zed is launched from the Dock or Finder, it may not inherit your shell `PATH`. If `~/Library/Logs/Zed/Zed.log` contains `failed to run rustc: No such file or directory`, either fully quit Zed and start it from a terminal with `zed .`, or export a GUI session PATH before reopening Zed:
+
+```sh
+launchctl setenv PATH "$HOME/.cargo/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+```
 
 ## Notes
 
