@@ -1,0 +1,30 @@
+id = "json-tools"
+name = "JSON Tools"
+version = "0.1.0"
+schema_version = 1
+authors = ["Percy"]
+description = "Validate, beautify, uglify, escape, and unescape JSON text."
+repository = "https://github.com/your-name/json-tools"
+
+[lib]
+kind = "Rust"
+
+[slash_commands.json-validate]
+description = "Validate JSON text"
+requires_argument = true
+
+[slash_commands.json-beautify]
+description = "Beautify JSON text"
+requires_argument = true
+
+[slash_commands.json-uglify]
+description = "Uglify JSON text"
+requires_argument = true
+
+[slash_commands.json-escape]
+description = "Escape JSON text"
+requires_argument = true
+
+[slash_commands.json-unescape]
+description = "Unescape JSON text"
+requires_argument = true
