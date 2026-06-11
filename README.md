@@ -8,6 +8,8 @@ This is a Zed-oriented port of the VS Code `vscode-json` extension. It implement
 - escape
 - unescape
 
+It also includes a small set of JSON snippets so the extension provides a Zed marketplace-supported capability.
+
 ## Zed support status
 
 Zed extensions currently do not expose the VS Code-style editor command API needed to replace the active selection or whole buffer directly. This extension therefore provides Zed Assistant slash commands plus a local CLI with the same transformation logic.

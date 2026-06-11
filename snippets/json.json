@@ -1,0 +1,17 @@
+{
+  "JSON object": {
+    "prefix": "obj",
+    "body": ["{", "  \"$1\": $2", "}$0"],
+    "description": "Insert a JSON object"
+  },
+  "JSON array": {
+    "prefix": "arr",
+    "body": ["[", "  $1", "]$0"],
+    "description": "Insert a JSON array"
+  },
+  "JSON property": {
+    "prefix": "prop",
+    "body": ["\"$1\": $2$0"],
+    "description": "Insert a JSON property"
+  }
+}

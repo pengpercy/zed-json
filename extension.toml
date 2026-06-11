@@ -5,6 +5,7 @@ schema_version = 1
 authors = ["Percy"]
 description = "Validate, beautify, uglify, escape, and unescape JSON text."
 repository = "https://github.com/pengpercy/zed-json"
+snippets = ["./snippets/json.json"]
 
 [lib]
 kind = "Rust"
